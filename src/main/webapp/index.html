@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>LGDZ</title></head>
+<body>
+<img src="/logo.png" alt="LGDZ logo"/>
+Press l, g, d and z.
+<div id="links">
+    <ul>
+        <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
+        <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
+        <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(document).live('keydown', function (e) {
+            if (e.which == 76) {
+                console.log("l");
+                play('BassDrum2.wav');
+            }
+            if (e.which == 71) {
+                play('HhC.wav');
+            }
+            if (e.which == 68) {
+                play('HhO.wav');
+            }
+            if (e.which == 90) {
+                play('Snare2.wav');
+            }
+        });
+    });
+
+
+    function play(file) {
+        console.log("play " + file);
+        var snd = new Audio(file);
+        snd.play();
+    }
+
+</script>
+</body>
+</html>
