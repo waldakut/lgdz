@@ -2,8 +2,8 @@
 <head>
     <title>LGDZ</title></head>
 <body>
-<img src="/logo.png" alt="LGDZ logo"/>
-Press l, g, d and z.
+<img src="/logo.png" alt="LGDZ logo" usemap="#imagemap"/>
+Press l, g, d and z or tap the characters in the logo.
 <div id="links">
     <ul>
         <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
@@ -11,30 +11,47 @@ Press l, g, d and z.
         <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
     </ul>
 </div>
+<map name="imagemap">
+    <!-- upper left x/y, bottom right x/y -->
+    <area coords="0,0,117,231" href="#" onclick="playL()" alt="L">
+    <area coords="118,0,282,231" href="#" onclick="playG()" alt="G">
+    <area coords="0,232,160,441" href="#" onclick="playD()" alt="D">
+    <area coords="161,232,282,441" href="#" onclick="playZ()" alt="Z">
+</map>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 
     $(document).ready(function () {
         $(document).live('keydown', function (e) {
             if (e.which == 76) {
-                console.log("l");
-                play('BassDrum2.wav');
+                playL();
             }
             if (e.which == 71) {
-                play('HhC.wav');
+                playG();
             }
             if (e.which == 68) {
-                play('HhO.wav');
+                playD();
             }
             if (e.which == 90) {
-                play('Snare2.wav');
+                playZ();
             }
         });
     });
 
-
+    function playL() {
+        play('BassDrum2.wav');
+    }
+    function playG() {
+        play('Snare2.wav');
+    }
+    function playD() {
+        play('HhC.wav');
+    }
+    function playZ() {
+        play('HhO.wav');
+    }
     function play(file) {
-        console.log("play " + file);
         var snd = new Audio(file);
         snd.play();
     }
