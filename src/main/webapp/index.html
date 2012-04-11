@@ -1,15 +1,30 @@
 <html>
 <head>
-    <title>LGDZ</title></head>
+    <title>LGDZ</title>
+
+    <style type="text/css">
+        .centered {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
 <body>
-<img src="/logo.png" alt="LGDZ logo" usemap="#imagemap"/>
-Press l, g, d and z or tap the characters in the logo.
-<div id="links">
-    <ul>
-        <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
-        <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
-        <li><a href="http://www.innercityvisions.com/">Innervisions</a></li>
-    </ul>
+
+<div id="main" class="centered">
+    <img src="/logo.png" alt="LGDZ logo" usemap="#imagemap"/>
+    <br/>
+    Press l, g, d and z or tap the characters in the logo.
+    <br/>
+    <br/>
+    <a href="http://www.innercityvisions.com/">Innervisions</a>
+    <br/>
+    <a href="http://www.innercityvisions.com/">Innervisions</a>
+    <br/>
+    <a href="http://www.innercityvisions.com/"><img src="/music_icon.jpg" alt="Innervisions"/> </a>
+    <br/>
 </div>
 <map name="imagemap">
     <!-- upper left x/y, bottom right x/y -->
@@ -21,7 +36,6 @@ Press l, g, d and z or tap the characters in the logo.
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-
     $(document).ready(function () {
         $(document).live('keydown', function (e) {
             if (e.which == 76) {
