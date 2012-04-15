@@ -22,7 +22,7 @@
     <br/>
     <br/>
     <span style="font-family:'Helvetica',sans-serif;">
-    <a href="www.facebook.com/LGDZ.LGDZ ">FB</a>
+    <a href="http://www.facebook.com/LGDZ.LGDZ ">FB</a>
     <br/>
     <a href="http://soundcloud.com/lgdz">SC</a>
     <br/>
@@ -34,7 +34,7 @@
 </div>
 <map name="imagemap">
     <!-- upper left x/y, bottom right x/y -->
-    <area id="l" coords="0,0,117,231" href="#" onclick="playL()" alt="L">
+    <area coords="0,0,117,231" href="#" onclick="playL()" alt="L">
     <area coords="118,0,282,231" href="#" onclick="playG()" alt="G">
     <area coords="0,232,160,441" href="#" onclick="playD()" alt="D">
     <area coords="161,232,282,441" href="#" onclick="playZ()" alt="Z">
@@ -43,9 +43,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#l').click(function() {
-           playL();
-        });
         $(document).live('keydown', function (e) {
             if (e.which == 76) {
                 playL();
