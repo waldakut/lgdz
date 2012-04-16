@@ -19,7 +19,6 @@
     </style>
 </head>
 <body>
-<audio id="snare2" src="Snare2.wav" preload="auto"></audio>
 <div id="main" class="centered">
     <img src="/logo.png" alt="LGDZ logo" usemap="#imagemap"/>
     <br/>
@@ -39,21 +38,30 @@
 </div>
 <map name="imagemap">
     <!-- upper left x/y, bottom right x/y -->
-    <area coords="0,0,117,231" href="#" onclick="playL()" alt="L">
-    <area coords="118,0,282,231" href="#" onclick="playG()" alt="G">
-    <area coords="0,232,160,441" href="#" onclick="playD()" alt="D">
-    <area coords="161,232,282,441" href="#" onclick="playZ()" alt="Z">
+    <area coords="0,0,117,231" href="#" onmousedown="playL()" alt="L">
+    <area coords="118,0,282,231" href="#" onmousedown="playG()" alt="G">
+    <area coords="0,232,160,441" href="#" onmousedown="playD()" alt="D">
+    <area coords="161,232,282,441" href="#" onmousedown="playZ()" alt="Z">
 </map>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        var channels = 10;
+        var elems = [], index = 0;
+        for (var i = 0; i < channels; i++)
+            elems.push(new Audio('Snare2.wav'));
+        function playSnare() {
+            elems[index].play();
+            index = (index + 1) % elems.length;
+        }
+
         $(document).live('keydown', function (e) {
             if (e.which == 76) {
                 playL();
             }
             if (e.which == 71) {
-                playG();
+                playSnare();
             }
             if (e.which == 68) {
                 playD();
